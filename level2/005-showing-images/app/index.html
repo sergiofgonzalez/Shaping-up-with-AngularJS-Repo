@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="gemStore">
+<head>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Shaping up with Angular.js</a>
+            </div>
+        </div>    
+    </div>
+    <div ng-controller="StoreController as store" class="well">
+        <ul class="list-group">
+            <li ng-repeat="product in store.products" class="list-group-item">
+                {{product.name}}
+                <span class="badge">{{product.price | currency}}</span>
+                <div id="gallery" ng-show="product.images.length > 0">
+                    <img ng-src="{{product.images[0]}}"/>
+                    <div class="row">
+                        <div class="col-xs-1" ng-repeat="image in product.images">
+                            <img ng-src="{{image}}" style="width: 25px; height=25px" />
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        </div>
+    </div>    
+</body>
+</html>
