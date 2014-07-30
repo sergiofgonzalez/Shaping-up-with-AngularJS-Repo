@@ -11,3 +11,5 @@ Code examples from CodeSchool course Shaping Up with AngularJS
 * Level 3: Forms, Models and Validation
 
 * Level 4: Directives
+
+* Level 5: Services
